@@ -13,6 +13,7 @@ __pycache__/
 db.sqlite3
 media/
 staticfiles/
+static_root/
 static/
 local_settings.py
 

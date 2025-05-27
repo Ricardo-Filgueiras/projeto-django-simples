@@ -27,11 +27,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
+
 # Set the debug mode based on an environment variable
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 
-ALLOWED_HOSTS = []
+# 
+ALLOWED_HOSTS_STRING = os.getenv('DJANGO_ALLOWED_HOSTS')
+if ALLOWED_HOSTS_STRING:
+    ALLOWED_HOSTS = ALLOWED_HOSTS_STRING.split(',')
+else:
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost'] # Padrão para desenvolvimento se não definido
 
 
 # Application definition
@@ -122,6 +128,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Diretório onde o collectstatic irá coletar todos os arquivos estáticos para deploy
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Opcional: se você tiver arquivos estáticos específicos do projeto (não dentro de apps)
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static", # Cria uma pasta 'static' na raiz do projeto
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
