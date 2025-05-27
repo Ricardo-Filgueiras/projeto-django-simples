@@ -16,3 +16,10 @@ pip install python-dotenv
 # Crie um arquivo .env para suas variáveis de ambiente:
 echo SECRET_KEY=sua_chave_secreta > .env
 echo DEBUG=True >> .env
+
+# Para criar um par de chaves (privada e pública) RSA usando OpenSSL:
+# No terminal, execute:
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+openssl rsa -pubout -in private_key.pem -out public_key.pem
+
+# Isso irá gerar os arquivos private_key.pem (chave privada) e public_key.pem (chave pública).
