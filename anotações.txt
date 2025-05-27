@@ -1,0 +1,18 @@
+criando o amnbiente
+
+python -m venv venv
+# Ative o ambiente virtual:
+# No Windows:
+venv\Scripts\activate
+# No macOS/Linux:
+source venv/bin/activate
+
+python -m pip install --upgrade pip
+pip freeze > requirements.txt
+
+# Instale o python-dotenv:
+pip install python-dotenv
+
+# Crie um arquivo .env para suas variáveis de ambiente:
+echo SECRET_KEY=sua_chave_secreta > .env
+echo DEBUG=True >> .env
