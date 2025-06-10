@@ -1,15 +1,119 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ titulo }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Documentação do Estilo (CSS) */
+
+        /* 1. Estilo Geral do Corpo da Página (body) */
+        body {
+            /* Define a fonte 'Inter' como principal. Se não estiver disponível, usa uma fonte sans-serif padrão. */
+            font-family: 'Inter', sans-serif;
+            /* Cor de fundo suave para a página. */
+            background-color: #f4f7f6;
+            /* Cor do texto principal, um cinza escuro em vez de preto puro. */
+            color: #333;
+            /* Remove as margens padrão do navegador. */
+            margin: 0;
+            /* Remove os preenchimentos padrão do navegador. */
+            padding: 0;
+            /* Alinha os itens ao centro (horizontalmente). */
+            display: flex;
+            /* Organiza o conteúdo em coluna. */
+            flex-direction: column;
+            /* Centraliza o conteúdo verticalmente na tela. */
+            justify-content: center;
+            /* Garante que o corpo ocupe pelo menos 100% da altura da tela. */
+            min-height: 100vh;
+        }
+
+        /* 2. Container Principal para o Conteúdo */
+        .container {
+            /* Largura máxima do container do conteúdo. */
+            max-width: 800px;
+            /* Margens automáticas nas laterais para centralizar, e 20px em cima/baixo. */
+            margin: 20px auto;
+            /* Preenchimento interno para não colar o texto nas bordas. */
+            padding: 40px;
+            /* Cor de fundo do container de conteúdo. */
+            background-color: #ffffff;
+            /* Adiciona uma sombra sutil para dar profundidade. */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            /* Bordas arredondadas. */
+            border-radius: 8px;
+            /* Alinha o texto à esquerda dentro do container. */
+            text-align: left;
+        }
+
+        /* 3. Estilo dos Títulos */
+        h1 {
+            /* Cor do título principal, um tom um pouco mais escuro. */
+            color: #222;
+            /* Define o peso da fonte como 'bold' (negrito). */
+            font-weight: 700;
+        }
+
+        /* 4. Estilo dos Parágrafos */
+        p {
+            /* Altura da linha para melhorar a legibilidade. */
+            line-height: 1.6;
+            /* Margem inferior para espaçamento entre os parágrafos. */
+            margin-bottom: 15px;
+        }
+        
+        /* 5. Estilo dos Links */
+        a {
+            /* Cor dos links, um azul moderno. */
+            color: #007bff;
+            /* Remove o sublinhado padrão. */
+            text-decoration: none;
+            /* Define o peso da fonte como 'bold' (negrito) para destaque. */
+            font-weight: 700;
+            /* Adiciona uma transição suave para o efeito hover. */
+            transition: color 0.3s ease;
+        }
+
+        /* Efeito ao passar o mouse sobre o link */
+        a:hover {
+            /* Muda a cor do link para um tom mais escuro. */
+            color: #0056b3;
+            /* Adiciona o sublinhado ao passar o mouse. */
+            text-decoration: underline;
+        }
+
+        /* 6. Estilo para o Bloco de Código */
+        code {
+            /* Cor de fundo para o bloco de código. */
+            background-color: #e9ecef;
+            /* Cor do texto do código. */
+            color: #333;
+            /* Preenchimento interno. */
+            padding: 2px 6px;
+            /* Bordas arredondadas. */
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ mensagem }}</h1>
-    <h2>Uma mensagem para voce meu amor, te amo gatinha !</h2>
-    <p>Se você está vendo isso, a view, URL e template estão funcionando!</p>
-    <p>Você pode acessar a página de inicial por aqui , nesse caso estou subindo uma atualização</p>
-    <p>Para mais informações, visite a <a href="https://docs.djangoproject.com/en/stable/">documentação do Django</a>.</p>
+
+    <div class="container">
+        <h1>{{ mensagem }}</h1>
+        <p>Bem-vindo à página inicial do Django!</p>
+        <p>Esta é uma aplicação Django simples para demonstrar a configuração de uma página inicial.</p>
+        <p>Se você está vendo isso, a view, URL e template estão funcionando!</p>
+        <p>Você pode personalizar esta página editando o arquivo <code>index.html</code> localizado em <code>pagina/templates/pagina_inicial/</code>.</p>
+        <p>Para começar a desenvolver sua aplicação, você pode adicionar mais views, templates e URLs conforme necessário.</p>
+        <p>Certifique-se de que o servidor Django esteja rodando. Você pode iniciar o servidor com o comando:</p>
+        <p><code>python manage.py runserver</code></p> <p>Para mais informações, visite a <a href="https://docs.djangoproject.com/en/stable/">documentação do Django</a>.</p>
+
+        <p>Você pode me apoiar se inscrevendo no meu canal do <a href="https://www.youtube.com/@ricardofilgueiras_datascience/videos">Youtube</a>.</p>
+        <p>Se você tiver alguma elogio, dúvida ou precisar de ajuda, sinta-se à vontade para entrar em contato através do <a href="https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/">LinkedIn</a>.</p>
+        <p>Boa sorte com seu projeto Django!</p>
+    </div>
+
 </body>
 </html>
